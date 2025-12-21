@@ -7,20 +7,42 @@
         <title>Portfolio Jesus Rubio</title>
     </head>
     <body>
-        <header id="bar-nav">
-            <nav>
-                <div id="bar-nav-title">Desarrollador Backend</div>
+        <header class="bar-nav">
+            <nav class="container nav">
+                <h1 class="nav-title">
+                    <a href="#">Desarrollador Backend</a>
+                </h1>
 
-                <div id="bar-nav-links">
-                    <ul>
-                        <li><a href="#about">Inicio</a></li>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#about" class="button">Inicio</a></li>
                         <li><a href="#projects">Proyectos</a></li>
                         <li><a href="#contact">Contacto</a></li>
-                        <li>Descargar CV</li>
+                        <li class="nav-cv">
+                            <a href="/cv.pdf" download>Descargar CV</a>
+                        </li>
                     </ul>
-                </div>
 
-                <div id="bar-nav-language">Idioma</div>
+                    <button class="nav-language" aria-label="Idioma">
+                        <span class="icon-language-es"
+                            ><img
+                                src="images/es.webp"
+                                alt="icono español"
+                            />ES</span
+                        ><span class="icon-language-en hidden"
+                            ><img
+                                src="images/en.webp"
+                                alt="icono ingles"
+                            />EN</span
+                        >
+                    </button>
+
+                    <button class="nav-burger" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
         </header>
 
@@ -80,5 +102,32 @@
         </section>
 
         <footer id="footer">Aca ira una Imagen</footer>
+
+        <script>
+            const burger = document.querySelector(".nav-burger");
+            const navLink = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll(".nav-links a");
+
+            const language = document.querySelector(".nav-language");
+            const iconLanguageES = document.querySelector(".icon-language-es");
+            const iconLanguageEN = document.querySelector(".icon-language-en");
+
+            burger.addEventListener("click", () => {
+                navLink.classList.toggle("active");
+                burger.classList.toggle("open");
+            });
+
+            navLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLink.classList.remove("active");
+                    burger.classList.remove("open");
+                });
+            });
+
+            language.addEventListener("click", () => {
+                iconLanguageES.classList.toggle("hidden");
+                iconLanguageEN.classList.toggle("hidden");
+            });
+        </script>
     </body>
 </html>
