@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +9,36 @@
     <body>
         <header class="bar-nav">
             <nav class="container nav">
-                <h1 class="nav-title">
+                <div class="nav-title text-subtitle">
                     <a href="#">Desarrollador Backend</a>
-                </h1>
+                </div>
 
                 <div class="nav-right">
                     <ul class="nav-links">
-                        <li><a href="#about" class="button">Inicio</a></li>
-                        <li><a href="#projects">Proyectos</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li>
+                            <a href="#about" class="btn btn--primary">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="btn btn--primary"
+                                >Proyectos</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#contact" class="btn btn--primary"
+                                >Contacto</a
+                            >
+                        </li>
                         <li class="nav-cv">
-                            <a href="/cv.pdf" download>Descargar CV</a>
+                            <a
+                                href="/cv.pdf"
+                                download
+                                class="btn btn--secondary"
+                                >Descargar CV</a
+                            >
                         </li>
                     </ul>
 
-                    <button class="nav-language" aria-label="Idioma">
+                    <button class="nav-language text-dark" aria-label="Idioma">
                         <span class="icon-language-es"
                             ><img
                                 src="images/es.webp"
@@ -46,18 +61,42 @@
             </nav>
         </header>
 
-        <section id="about">
+        <section id="about" class="about container">
             <div class="about-info">
-                <h1 class="about-info-title">Hola Soy</h1>
+                <p class="intro text-subtitle text-dark">Hola, soy</p>
 
-                <h3 class="about-info-subtitle">Sub Titulo</h3>
+                <h1 class="text-heading-1 text-green text-shadow">
+                    JESÚS RUBIO
+                </h1>
 
-                <p class="about-info-resume">Resumen</p>
+                <h2 class="text-subtitle text-purple">
+                    Desarrollador Java Backend
+                </h2>
 
-                <div class="about-info-skill">Skills</div>
+                <p class="paragraph">
+                    Me gusta construir APIs REST bien diseñadas, eficientes y
+                    escalables con Spring Boot, trabajar con bases de datos
+                    relacionales y mejorar constantemente mis habilidades a
+                    través de proyectos personales y colaborativos.
+                    <br />Formado en Ingeniería en Informática, complementando
+                    mi aprendizaje con bootcamp y diversos cursos
+                    especializados. <br />Comprometido con el aprendizaje
+                    continuo y la excelencia técnica, busco seguir creciendo
+                    profesionalmente dentro del sector tecnológico.
+                </p>
+
+                <ul class="skills">
+                    <li class="skill-item">
+                        <img src="assets/icons/java.svg" alt="Java" />Java
+                    </li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
             </div>
 
-            <div class="about-photo">Foto</div>
+            <div class="about-photo">
+                <img src="images/profile.jpg" alt="Foto de Jesus Rubio" />
+            </div>
         </section>
 
         <section id="projects">
