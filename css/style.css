@@ -70,7 +70,7 @@ button {
 
 section {
     scroll-margin-top: 72px; /* igual que la altura de tu header */
-    padding: 5rem 0;
+    /*padding: 5rem 0;*/
 }
 
 /*-----------General-----------*/
@@ -406,6 +406,250 @@ section {
     filter: drop-shadow(0 0 8px var(--glow));
 }
 
+/*-----------SEPARATION-----------*/
+.separation {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+/*-----------PROYECTOS-----------*/
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    align-items: stretch;
+}
+
+.projects-article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+    padding: 1.75rem;
+
+    border: 2px solid var(--green);
+    border-left-width: 6px;
+    border-bottom-width: 6px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projects-article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.projects-article-image {
+    border-radius: 8px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.projects-article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.projects-article-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.projects-article-description {
+    font-size: 0.95rem;
+}
+
+.projects-article-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.projects-article-skills li {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    background: rgba(133, 51, 255, 0.225);
+
+    color: var(--green);
+    border-radius: 999px;
+    border: none;
+
+    padding: 0.2rem 0.45rem;
+}
+
+.projects-article-skills img {
+    width: 18px;
+    height: 18px;
+}
+
+.projects-article-footer {
+    margin-top: auto;
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.projects-article-footer > * {
+    flex: 1 1 auto;
+}
+
+.projects-article-footer > :last-child {
+    flex-basis: 100%;
+}
+
+.projects-article-footer a,
+.projects-article-footer button {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    background: none;
+    border: 1px solid var(--green);
+
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: center;
+}
+
+.projects-article-footer a:hover,
+.projects-article-footer button:hover {
+    background: var(--green);
+    color: var(--dark);
+}
+
+/*-----------MODAL IMAGE-----------*/
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 24, 31, 0.85);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    max-height: 90vh;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/*-----------MODAL HISTORY-----------*/
+.modal-history {
+    background: var(--dark);
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-history-title {
+    font-size: 1rem;
+
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(175, 254, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.history-timeline {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.history-version {
+    display: flex;
+    justify-content: space-between;
+    color: var(--green);
+}
+
+.history-changes {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    color: var(--text-dark);
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(175, 254, 0, 0.5);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.status-done {
+    color: #affe00;
+}
+.status-progress {
+    color: #38bdf8;
+}
+.status-planned {
+    color: #c084fc;
+}
+
 @media (max-width: 768px) {
     section {
         padding: 3rem 0;
@@ -532,5 +776,31 @@ section {
     .skill-item img {
         width: 42px;
         height: 42px;
+    }
+
+    /*-----------PROJECTS-----------*/
+    .projects-article {
+        padding: 1.25rem;
+    }
+
+    .projects-article-image {
+        height: 140px;
+    }
+
+    .projects-article-footer a {
+        flex: 1;
+        text-align: center;
+    }
+
+    /*-----------MODAL-----------*/
+
+    .modal-content {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-list {
+        grid-template-columns: 1fr;
     }
 }
