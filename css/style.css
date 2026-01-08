@@ -650,6 +650,85 @@ section {
     color: #c084fc;
 }
 
+/*-----------Contact-----------*/
+.section-divider {
+    width: 100%;
+    max-width: 90vw;
+    height: 1px;
+    background-color: rgb(28 48 56);
+    margin: 2rem auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-links a {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--green);
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-links a:hover {
+    background: var(--green);
+    color: var(--dark);
+}
+
+/* ---------- FORM ---------- */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#contact-form label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: transparent;
+    border: 1px solid rgb(28 48 56);
+    padding: 0.6rem;
+    color: var(--white);
+    font-family: inherit;
+}
+
+#contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+#contact-form button {
+    align-self: flex-start;
+    padding: 0.5rem 1.2rem;
+    font-weight: 700;
+    background: var(--green);
+    color: var(--dark);
+}
+
 @media (max-width: 768px) {
     section {
         padding: 3rem 0;
@@ -796,6 +875,11 @@ section {
 
     .modal-content {
         max-width: 90vw;
+    }
+
+    /*-----------CONTACT-----------*/
+    .contact-container {
+        grid-template-columns: 1fr;
     }
 }
 
