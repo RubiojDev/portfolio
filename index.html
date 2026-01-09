@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Portfolio de Jesús Rubio, desarrollador Java Backend especializado en APIs REST con Spring Boot."
+        />
         <link rel="stylesheet" href="./css/style.css" />
         <title>Portfolio Jesus Rubio</title>
     </head>
@@ -132,8 +136,8 @@
             </div>
         </section>
 
-        <div class="separation">
-            <img src="images/top-separation.svg" alt="Separador decorativo" />
+        <div class="decorator">
+            <img src="images/top-decorator.svg" alt="Imagen decorativa" />
         </div>
 
         <section id="projects" class="container">
@@ -148,7 +152,10 @@
                             class="projects-article-image"
                             data-modal-image="images/trabajando.jpg"
                         >
-                            <img src="images/trabajando.jpg" alt="Proyecto" />
+                            <img
+                                src="images/trabajando.jpg"
+                                alt="Captura del proyecto API"
+                            />
                         </figure>
 
                         <p class="projects-article-description text-dark">
@@ -213,7 +220,10 @@
                             class="projects-article-image"
                             data-modal-image="images/trabajando.jpg"
                         >
-                            <img src="images/trabajando.jpg" alt="Proyecto" />
+                            <img
+                                src="images/trabajando.jpg"
+                                alt="Captura del proyecto API"
+                            />
                         </figure>
 
                         <p class="projects-article-description text-dark">
@@ -278,7 +288,10 @@
                             class="projects-article-image"
                             data-modal-image="images/trabajando.jpg"
                         >
-                            <img src="images/trabajando.jpg" alt="Proyecto" />
+                            <img
+                                src="images/trabajando.jpg"
+                                alt="Captura del proyecto API"
+                            />
                         </figure>
 
                         <p class="projects-article-description text-dark">
@@ -338,27 +351,102 @@
             </ul>
         </section>
 
-        <section id="contact">
-            <h2 class="contact-title">Contacto</h2>
+        <div class="section-divider"></div>
 
-            <div class="contact-links">
-                <div>GitHub</div>
-                <div>LinkdIn</div>
-                <div>Correo</div>
+        <section id="contact" class="container">
+            <h3 class="text-subtitle text-green">Contacto</h3>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>
+                        ¿Tienes un proyecto, idea o simplemente quieres
+                        conectar?
+                        <strong>Hablemos.</strong>
+                    </p>
+
+                    <ul class="contact-links">
+                        <li>
+                            <a
+                                href="..."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="GitHub"
+                            >
+                                <img
+                                    src="assets/icons/github.svg"
+                                    alt="GitHub"
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="..."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn"
+                            >
+                                <img
+                                    src="assets/icons/linkedin.svg"
+                                    alt="LinkedIn"
+                                />
+                            </a>
+                        </li>
+                        <li class="contact-item">
+                            <a href="#" id="copy-email" title="Copiar correo">
+                                <img src="assets/icons/email.svg" alt="Email" />
+                            </a>
+                            <span class="copy-feedback" id="copy-feedback"
+                                >Correo copiado</span
+                            >
+                        </li>
+                        <li>
+                            <a href="/cv.pdf" download title="Descargar CV">
+                                <img
+                                    src="assets/icons/descargarpdf.png"
+                                    alt="Descargar CV"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <form id="contact-form">
+                    <label for="name">Nombre</label>
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Nombre"
+                        required
+                    />
+
+                    <label for="email">Correo</label>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Correo"
+                        required
+                    />
+
+                    <label for="message">Mensaje</label>
+                    <textarea
+                        id="message"
+                        placeholder="Mensaje"
+                        required
+                    ></textarea>
+
+                    <button type="submit">Enviar</button>
+                    <p id="form-status" aria-live="polite"></p>
+                </form>
             </div>
-
-            <form id="contact-form" class="contact-form">
-                <label>Nombre</label>
-                <input type="text" placeholder="Nombre" />
-                <label>Correo</label>
-                <input type="email" placeholder="Correo" />
-                <label>Mensaje</label>
-                <textarea placeholder="Mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
         </section>
 
-        <footer id="footer">Aca ira una Imagen</footer>
+        <div class="section-divider"></div>
+
+        <footer id="footer">
+            <div>© 2026 · Jesús Rubio</div>
+            <div>“Built with ❤️ HTML, CSS & JS”</div>
+            <img src="images/bottom-decorator.svg" alt="Imagen decorativa" />
+        </footer>
 
         <div id="image-modal" class="modal">
             <div class="modal-overlay"></div>
@@ -383,6 +471,10 @@
             </div>
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+            emailjs.init("tnBmvzHPYDV4Onvh5");
+        </script>
         <script>
             const burger = document.querySelector(".nav-burger");
             const navLink = document.querySelector(".nav-links");
@@ -496,6 +588,82 @@
                 .addEventListener("click", () => {
                     historyModal.classList.remove("active");
                     document.body.style.overflow = "";
+                });
+
+            const form = document.getElementById("contact-form");
+            const statusMsg = document.getElementById("form-status");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                statusMsg.textContent = "";
+                statusMsg.className = "";
+
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+
+                if (name.length < 2) {
+                    showError("El nombre debe tener al menos 2 caracteres");
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    showError("El correo no es válido");
+                    return;
+                }
+
+                if (message.length < 10) {
+                    showError("El mensaje debe tener al menos 10 caracteres");
+                    return;
+                }
+
+                statusMsg.textContent = "Enviando...";
+
+                emailjs
+                    .send("service_f4y779d", "template_bpalade", {
+                        name,
+                        email,
+                        message,
+                    })
+                    .then(() => {
+                        statusMsg.textContent =
+                            "Mensaje enviado correctamente ✔";
+                        statusMsg.classList.add("form-success");
+                        form.reset();
+                    })
+                    .catch(() => {
+                        showError(
+                            "Error al enviar el mensaje. Intenta más tarde."
+                        );
+                    });
+            });
+            function showError(msg) {
+                statusMsg.textContent = msg;
+                statusMsg.classList.add("form-error");
+            }
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+        </script>
+        <script>
+            const emailName = "tucorreo";
+            const emailServer = "gmail";
+            const email = emailName + "@" + emailServer + ".com";
+            const feedback = document.getElementById("copy-feedback");
+
+            document
+                .getElementById("copy-email")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText(email).then(() => {
+                        feedback.classList.add("show");
+                        setTimeout(
+                            () => feedback.classList.remove("show"),
+                            2000
+                        );
+                    });
                 });
         </script>
     </body>

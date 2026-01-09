@@ -142,6 +142,12 @@ section {
     margin-bottom: 0.5rem;
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
 /*-----------BAR NAV-----------*/
 
 .bar-nav {
@@ -407,7 +413,7 @@ section {
 }
 
 /*-----------SEPARATION-----------*/
-.separation {
+.decorator {
     padding-top: 4rem;
     padding-bottom: 2rem;
 }
@@ -438,7 +444,7 @@ section {
 
 .projects-article:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .projects-article-image {
@@ -650,6 +656,169 @@ section {
     color: #c084fc;
 }
 
+/*-----------Contact-----------*/
+.section-divider {
+    width: 100%;
+    max-width: 90vw;
+    height: 1px;
+    background-color: rgb(28 48 56);
+    margin: 2rem auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.contact-info p strong {
+    color: var(--purple);
+}
+
+.contact-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-links a {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--text-dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.contact-links img {
+    width: 34px;
+    height: 34px;
+}
+
+.contact-links a:hover {
+    transform: translateY(-4px);
+    background-color: var(--green);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.contact-item {
+    position: relative;
+}
+
+.copy-feedback {
+    position: absolute;
+    bottom: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-dark);
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.contact-links a {
+    border: 1px solid rgba(175, 254, 0, 0.25);
+}
+
+.contact-links a:hover img {
+    filter: drop-shadow(0 0 6px rgba(4, 24, 31, 0.8));
+}
+
+.contact-links a:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 4px;
+}
+
+/* ---------- FORM ---------- */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#contact-form label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: transparent;
+    border: 1px solid rgb(28 48 56);
+    padding: 0.6rem;
+    color: var(--white);
+    font-family: inherit;
+}
+
+#contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+#contact-form button {
+    align-self: flex-start;
+    padding: 0.5rem 1.2rem;
+    font-weight: 700;
+    background-color: var(--green);
+    color: var(--dark);
+    transition: background-color 0.2s ease;
+    box-shadow: -2px 2px 0 0 var(--button-shadow-alt);
+}
+
+#contact-form button:hover {
+    background-color: var(--purple);
+}
+
+#contact-form button:active {
+    transform: translate(-2px, 2px);
+    box-shadow: none;
+}
+
+#form-status {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.form-error {
+    color: #f87171; /* rojo suave */
+}
+
+.form-success {
+    color: var(--green);
+}
+
+#footer div {
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--text-dark);
+}
+
 @media (max-width: 768px) {
     section {
         padding: 3rem 0;
@@ -796,6 +965,17 @@ section {
 
     .modal-content {
         max-width: 90vw;
+    }
+
+    /*-----------CONTACT-----------*/
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- FORM ---------- */
+
+    #contact-form button {
+        box-shadow: none;
     }
 }
 
