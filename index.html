@@ -1,84 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Portfolio de Jesús Rubio, desarrollador Java Backend especializado en APIs REST con Spring Boot."
+        />
         <link rel="stylesheet" href="./css/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script type="module" src="./javascript/main.js" defer></script>
         <title>Portfolio Jesus Rubio</title>
     </head>
     <body>
-        <header id="bar-nav">
-            <nav>
-                <div id="bar-nav-title">Desarrollador Backend</div>
-
-                <div id="bar-nav-links">
-                    <ul>
-                        <li><a href="#about">Inicio</a></li>
-                        <li><a href="#projects">Proyectos</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                        <li>Descargar CV</li>
-                    </ul>
+        <header class="bar-nav">
+            <nav class="container nav">
+                <div class="nav-title text-subtitle">
+                    <a href="#">Desarrollador Backend</a>
                 </div>
 
-                <div id="bar-nav-language">Idioma</div>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#about" class="btn btn--primary">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="btn btn--primary">
+                                Proyectos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="btn btn--primary">
+                                Contacto
+                            </a>
+                        </li>
+                        <li class="nav-cv">
+                            <a href="./assets/docs/CV_Jesus_Rubio_Backend.pdf" download class="btn btn--secondary">
+                                Descargar CV
+                            </a>
+                        </li>
+                    </ul>
+
+                    <button class="nav-language text-dark" aria-label="Idioma">
+                        <span class="icon-language-es">
+                            <img src="images/es.webp" alt="icono español"/>
+                            ES
+                        </span>
+                        <span class="icon-language-en hidden">
+                            <img src="images/en.webp" alt="icono ingles"/>
+                            EN
+                        </span>
+                    </button>
+
+                    <button class="nav-burger" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
         </header>
 
-        <section id="about">
+        <section id="about" class="about container">
             <div class="about-info">
-                <h1 class="about-info-title">Hola Soy</h1>
+                <p class="intro text-subtitle">Hola, soy</p>
 
-                <h3 class="about-info-subtitle">Sub Titulo</h3>
+                <h1 class="text-heading-1 text-green text-shadow">
+                    JESÚS RUBIO
+                </h1>
 
-                <p class="about-info-resume">Resumen</p>
+                <h2 class="text-subtitle text-purple">
+                    Desarrollador Java Backend
+                </h2>
 
-                <div class="about-info-skill">Skills</div>
-            </div>
+                <p class="paragraph">
+                    Me gusta construir APIs REST bien diseñadas, eficientes y
+                    escalables con Spring Boot, trabajar con bases de datos
+                    relacionales y mejorar constantemente mis habilidades a
+                    través de proyectos personales y colaborativos.
+                    <br />Formado en Ingeniería en Informática, complementando
+                    mi aprendizaje con bootcamp y diversos cursos
+                    especializados. <br />Comprometido con el aprendizaje
+                    continuo y la excelencia técnica, busco seguir creciendo
+                    profesionalmente dentro del sector tecnológico.
+                </p>
 
-            <div class="about-photo">Foto</div>
-        </section>
-
-        <section id="projects">
-            <div class="projects-separation">Aca va una Imagen</div>
-
-            <h2 class="projects-title">Proyectos</h2>
-
-            <article class="projects-article">
-                <div class="projects-article-title">Titulo</div>
-
-                <div class="projects-article-image">Imagen</div>
-
-                <p class="projects-article-description">Breve descripcion</p>
-
-                <div class="projects-article-skill">Skill</div>
-
-                <div class="projects-article-footer">
-                    <div>GitHub</div>
-                    <div>LinkedIn</div>
+                <div>
+                    <h3 class="text-subtitle text-green">Stack Tecnológico</h3>
+                    <ul class="skills">
+                        <li class="skill-wrapper common" aria-label="Java - Nivel común">
+                            <div class="skill-item">
+                                <img src="assets/icons/java.svg" alt="Java"/>
+                                <span>Java</span>
+                            </div>
+                        </li>
+                        <li class="skill-wrapper rare">
+                            <div class="skill-item">
+                                <img src="assets/icons/java.svg" alt="Java"/>
+                                <span>Java</span>
+                            </div>
+                        </li>
+                        <li class="skill-wrapper epic">
+                            <div class="skill-item">
+                                <img src="assets/icons/java.svg" alt="Java"/>
+                                <span>Java</span>
+                            </div>
+                        </li>
+                        <li class="skill-wrapper legendary">
+                            <div class="skill-item">
+                                <img src="assets/icons/java.svg" alt="Java"/>
+                                <span>Java</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </article>
-        </section>
-
-        <section id="contact">
-            <h2 class="contact-title">Contacto</h2>
-
-            <div class="contact-links">
-                <div>GitHub</div>
-                <div>LinkdIn</div>
-                <div>Correo</div>
             </div>
 
-            <form id="contact-form" class="contact-form">
-                <label>Nombre</label>
-                <input type="text" placeholder="Nombre" />
-                <label>Correo</label>
-                <input type="email" placeholder="Correo" />
-                <label>Mensaje</label>
-                <textarea placeholder="Mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+            <div class="about-photo">
+                <img src="images/profile.jpg" alt="Foto de Jesus Rubio" />
+            </div>
         </section>
 
-        <footer id="footer">Aca ira una Imagen</footer>
+        <div class="decorator">
+            <img src="images/top-decorator.svg" alt="Imagen decorativa" />
+        </div>
+
+        <section id="projects" class="container">
+            <h3 class="text-subtitle text-green">Proyectos</h3>
+
+            <ul class="projects-list">
+                <li>
+                    <article class="projects-article">
+                        <h4 class="projects-article-title">Título</h4>
+
+                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
+                            <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
+                        </figure>
+
+                        <p class="projects-article-description text-dark">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Saepe, tempora! Recusandae quas, debitis ut
+                            provident dolores esse, rerum consectetur possimus
+                            quidem exercitationem, autem molestiae ab
+                            reprehenderit? Ipsum magnam maxime consequuntur.
+                        </p>
+
+                        <ul class="projects-article-skills" aria-label="Tecnologías utilizadas">
+                            <li>
+                                <img
+                                    src="assets/icons/java.svg"
+                                    alt="Java"
+                                    aria-hidden="true"
+                                />
+                                <span>Skill1</span>
+                            </li>
+                            <li>
+                                <img src="" alt="" aria-hidden="true" />
+                                <span>Skill1</span>
+                            </li>
+                        </ul>
+
+                        <footer class="projects-article-footer">
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Demo
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Documentación
+                            </a>
+                            <button class="project-history-btn" data-project="project-ifix">
+                                Historial
+                            </button>
+                        </footer>
+                    </article>
+                </li>
+                <li>
+                    <article class="projects-article">
+                        <h4 class="projects-article-title">Título</h4>
+
+                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
+                            <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
+                        </figure>
+
+                        <p class="projects-article-description text-dark">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Saepe, tempora! Recusandae quas, debitis ut
+                            provident dolores esse, rerum consectetur possimus
+                            quidem exercitationem, autem molestiae ab
+                            reprehenderit? Ipsum magnam maxime consequuntur.
+                        </p>
+
+                        <ul class="projects-article-skills" aria-label="Tecnologías utilizadas">
+                            <li>
+                                <img
+                                    src="assets/icons/java.svg"
+                                    alt="Java"
+                                    aria-hidden="true"
+                                />
+                                <span>Skill1</span>
+                            </li>
+                            <li>
+                                <img src="" alt="" aria-hidden="true" />
+                                <span>Skill1</span>
+                            </li>
+                        </ul>
+
+                        <footer class="projects-article-footer">
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Demo
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Documentación
+                            </a>
+                            <button class="project-history-btn" data-project="project-2">
+                                Historial
+                            </button>
+                        </footer>
+                    </article>
+                </li>
+                <li>
+                    <article class="projects-article">
+                        <h4 class="projects-article-title">Título</h4>
+
+                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
+                            <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
+                        </figure>
+
+                        <p class="projects-article-description text-dark">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Saepe, tempora! Recusandae quas, debitis ut
+                            provident dolores esse, rerum consectetur possimus
+                            quidem exercitationem, autem molestiae ab
+                            reprehenderit? Ipsum magnam maxime consequuntur.
+                        </p>
+
+                        <ul class="projects-article-skills" aria-label="Tecnologías utilizadas">
+                            <li>
+                                <img
+                                    src="assets/icons/java.svg"
+                                    alt="Java"
+                                    aria-hidden="true"
+                                />
+                                <span>Skill1</span>
+                            </li>
+                            <li>
+                                <img src="" alt="" aria-hidden="true" />
+                                <span>Skill1</span>
+                            </li>
+                        </ul>
+
+                        <footer class="projects-article-footer">
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Demo
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                            <a href="..." target="_blank" rel="noopener noreferrer">
+                                Documentación
+                            </a>
+                            <button class="project-history-btn" data-project="project-3">
+                                Historial
+                            </button>
+                        </footer>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="contact" class="container">
+            <h3 class="text-subtitle text-green">Contacto</h3>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>
+                        ¿Tienes un proyecto, idea o simplemente quieres
+                        conectar?
+                        <strong>Hablemos.</strong>
+                    </p>
+
+                    <ul class="contact-links">
+                        <li>
+                            <a href="..." target="_blank" rel="noopener noreferrer" title="GitHub">
+                                <img src="assets/icons/github.svg" alt="GitHub"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="..." target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <img src="assets/icons/linkedin.svg" alt="LinkedIn"/>
+                            </a>
+                        </li>
+                        <li class="contact-item">
+                            <a href="#" id="copy-email" title="Copiar correo">
+                                <img src="assets/icons/email.svg" alt="Email" />
+                            </a>
+                            <span class="copy-feedback" id="copy-feedback">
+                                Correo copiado
+                            </span>
+                        </li>
+                        <li>
+                            <a href="./assets/docs/CV_Jesus_Rubio_Backend.pdf" download title="Descargar CV">
+                                <img src="assets/icons/descargarpdf.png" alt="Descargar CV"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <form id="contact-form">
+                    <label for="name">Nombre</label>
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Nombre"
+                        required
+                    />
+
+                    <label for="email">Correo</label>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Correo"
+                        required
+                    />
+
+                    <label for="message">Mensaje</label>
+                    <textarea
+                        id="message"
+                        placeholder="Mensaje"
+                        required
+                    ></textarea>
+
+                    <button type="submit">Enviar</button>
+                    <p id="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <footer id="footer">
+            <div>© 2026 · Jesús Rubio</div>
+            <div>“Built with ❤️ HTML, CSS & JS”</div>
+            <img src="images/bottom-decorator.svg" alt="Imagen decorativa" />
+        </footer>
+
+        <div id="image-modal" class="modal">
+            <div class="modal-overlay"></div>
+
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Cerrar">✕</button>
+                <img src="" alt="Imagen ampliada del proyecto" />
+            </div>
+        </div>
+
+        <div id="history-modal" class="modal">
+            <div class="modal-overlay"></div>
+
+            <div class="modal-content modal-history">
+                <button class="modal-close" aria-label="Cerrar">✕</button>
+
+                <h3 class="modal-history-title">Historial del proyecto</h3>
+
+                <div class="modal-body">
+                    <ul class="history-timeline"></ul>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
