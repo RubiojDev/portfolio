@@ -5,11 +5,11 @@ export function historyModal() {
     document.querySelectorAll(".project-history-btn").forEach((btn) => {
         btn.addEventListener("click", async () => {
             const projectId = btn.dataset.project;
-
+            
             try {
-                const res = await fetch("data/history.json");
+                const res = await fetch(`data/${projectId}.json`);
                 const data = await res.json();
-                renderHistory(data[projectId]);
+                renderHistory(data);
             } catch (err) {
                 historyList.innerHTML = "<li>Error cargando historial.</li>";
             }
