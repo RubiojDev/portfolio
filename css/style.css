@@ -124,11 +124,12 @@ section {
 }
 
 .btn:hover {
-    background: var(--button-bg-hover);
+    background: var(--button-bg-alt);
 }
 
 .btn--secondary:hover {
-    background: var(--button-bg-hover-alt);
+    background: var(--button-bg);
+    color: var(--button-color);
 }
 
 .btn:active {
@@ -185,6 +186,10 @@ button:focus-visible {
     font-size: 0.875rem;
 }
 
+.nav-language:hover {
+    color: var(--text-white);
+}
+
 .icon-language-es,
 .icon-language-en {
     display: inline-flex;
@@ -227,6 +232,7 @@ button:focus-visible {
 .about-photo img {
     width: 200px;
     border-radius: 12px;
+    min-width: 130px;
 }
 
 .skills {
@@ -742,7 +748,7 @@ button:focus-visible {
         font-size: 1.1rem;
         line-height: 1.7;
     }
-    
+
     /*-----------BAR NAV-----------*/
     .nav-right {
         display: flex;
