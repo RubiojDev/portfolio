@@ -5,45 +5,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
+            data-i18n-meta="metaDescription"
             content="Portfolio de Jesús Rubio, desarrollador Java Backend especializado en APIs REST con Spring Boot."
         />
         <link rel="stylesheet" href="./css/style.css" />
         <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
         <script type="module" src="./javascript/main.js" defer></script>
-        <title>Portfolio Jesus Rubio</title>
+        <title data-i18n="pageTitle">Jesús Rubio | Desarrollador Java Backend</title>
     </head>
     <body>
         <header class="bar-nav">
             <nav class="container nav">
                 <div class="nav-title text-subtitle">
-                    <a href="#">Desarrollador Backend</a>
+                    <a href="#" data-i18n="title">Desarrollador Backend</a>
                 </div>
 
                 <div class="nav-right">
                     <ul class="nav-links">
                         <li>
-                            <a href="#about" class="btn btn--primary">
+                            <a href="#about" class="btn btn--primary" data-i18n="btnHome">
                                 Inicio
                             </a>
                         </li>
                         <li>
-                            <a href="#projects" class="btn btn--primary">
+                            <a href="#projects" class="btn btn--primary" data-i18n="btnProjects">
                                 Proyectos
                             </a>
                         </li>
                         <li>
-                            <a href="#contact" class="btn btn--primary">
+                            <a href="#contact" class="btn btn--primary" data-i18n="btnContact">
                                 Contacto
                             </a>
                         </li>
                         <li class="nav-cv">
-                            <a href="./assets/docs/CV_Jesus_Rubio_Backend.pdf" download class="btn btn--secondary">
+                            <a href="./assets/docs/CV_Jesus_Rubio_Backend_ES.pdf" download class="btn btn--secondary" data-cv-link data-i18n="btnDownloadCV">
                                 Descargar CV
                             </a>
                         </li>
                     </ul>
 
-                    <button class="nav-language text-dark" aria-label="Idioma">
+                    <button type="button" class="nav-language text-dark" aria-label="Idioma" data-i18n-aria="language">
                         <span class="icon-language-es">
                             <img src="assets/icons/es.webp" alt="icono español"/>
                             ES
@@ -54,7 +55,7 @@
                         </span>
                     </button>
 
-                    <button class="nav-burger" aria-label="Menú">
+                    <button type="button" class="nav-burger" aria-label="Menú" data-i18n-aria="menu">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -65,17 +66,17 @@
 
         <section id="about" class="about container">
             <div class="about-info">
-                <p class="intro text-subtitle">Hola, soy</p>
+                <p class="intro text-subtitle" data-i18n="intro">Hola, soy</p>
 
                 <h1 class="text-heading-1 text-green text-shadow">
                     JESÚS RUBIO
                 </h1>
 
-                <h2 class="text-subtitle text-purple">
+                <h2 class="text-subtitle text-purple" data-i18n="role">
                     Desarrollador Java Backend
                 </h2>
 
-                <p class="paragraph">
+                <p class="paragraph" data-i18n-html="resume">
                     Me gusta construir APIs REST bien diseñadas, eficientes y
                     escalables con Spring Boot, trabajar con bases de datos
                     relacionales y mejorar constantemente mis habilidades a
@@ -95,94 +96,93 @@
         </section>
         <section id="stack" class="container">
             <div>
-                    <h3 class="text-subtitle text-green">Stack Tecnológico</h3>
-                    <ul class="skills">
-                        <li class="skill-wrapper legendary" aria-label="Java - Nivel común">
-                            <div class="skill-item">
-                                <img src="assets/icons/java.svg" alt="Skill Java"/>
-                                <span>Java</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper epic">
-                            <div class="skill-item">
-                                <img src="assets/icons/spring.svg" alt="Skill Spring Boot"/>
-                                <span>Spring Boot</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper epic">
-                            <div class="skill-item">
-                                <img src="assets/icons/hibernate.svg" alt="Skill Hibernate"/>
-                                <span>Hibernate</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper epic">
-                            <div class="skill-item">
-                                <img src="assets/icons/mysql.svg" alt="Skill MySQL"/>
-                                <span>MySQL</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper epic">
-                            <div class="skill-item">
-                                <img src="assets/icons/postgresql.svg" alt="Skill PostgreSQL"/>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper rare">
-                            <div class="skill-item">
-                                <img src="assets/icons/maven.svg" alt="Skill Maven"/>
-                                <span>Maven</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper rare">
-                            <div class="skill-item">
-                                <img src="assets/icons/git.svg" alt="Skill Git"/>
-                                <span>Git</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper rare">
-                            <div class="skill-item">
-                                <img src="assets/icons/swagger.svg" alt="Skill Swagger"/>
-                                <span>Swagger</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/junit.svg" alt="Skill JUnit"/>
-                                <span>JUnit</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/docker.svg" alt="Skill Docker"/>
-                                <span>Docker</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/html.svg" alt="Skill HTML"/>
-                                <span>HTML</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/css.svg" alt="Skill CSS"/>
-                                <span>CSS</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/javascript.svg" alt="Skill JavaScript"/>
-                                <span>JavaScript</span>
-                            </div>
-                        </li>
-                        <li class="skill-wrapper common">
-                            <div class="skill-item">
-                                <img src="assets/icons/bootstrap.svg" alt="Skill Bootstrap"/>
-                                <span>Bootstrap</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <h3 class="text-subtitle text-green" data-i18n="stackTitle">Stack Tecnológico</h3>
+                <ul class="skills">
+                    <li class="skill-wrapper legendary">
+                        <div class="skill-item">
+                            <img src="assets/icons/java.svg" alt="Skill Java"/>
+                            <span>Java</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper epic">
+                        <div class="skill-item">
+                            <img src="assets/icons/spring.svg" alt="Skill Spring Boot"/>
+                            <span>Spring Boot</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper epic">
+                        <div class="skill-item">
+                            <img src="assets/icons/hibernate.svg" alt="Skill Hibernate"/>
+                            <span>Hibernate</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper epic">
+                        <div class="skill-item">
+                            <img src="assets/icons/mysql.svg" alt="Skill MySQL"/>
+                            <span>MySQL</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper epic">
+                        <div class="skill-item">
+                            <img src="assets/icons/postgresql.svg" alt="Skill PostgreSQL"/>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper rare">
+                        <div class="skill-item">
+                            <img src="assets/icons/maven.svg" alt="Skill Maven"/>
+                            <span>Maven</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper rare">
+                        <div class="skill-item">
+                            <img src="assets/icons/git.svg" alt="Skill Git"/>
+                            <span>Git</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper rare">
+                        <div class="skill-item">
+                            <img src="assets/icons/swagger.svg" alt="Skill Swagger"/>
+                            <span>Swagger</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/junit.svg" alt="Skill JUnit"/>
+                            <span>JUnit</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/docker.svg" alt="Skill Docker"/>
+                            <span>Docker</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/html.svg" alt="Skill HTML"/>
+                            <span>HTML</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/css.svg" alt="Skill CSS"/>
+                            <span>CSS</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/javascript.svg" alt="Skill JavaScript"/>
+                            <span>JavaScript</span>
+                        </div>
+                    </li>
+                    <li class="skill-wrapper common">
+                        <div class="skill-item">
+                            <img src="assets/icons/bootstrap.svg" alt="Skill Bootstrap"/>
+                            <span>Bootstrap</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -191,7 +191,7 @@
         </div>
 
         <section id="projects" class="container">
-            <h3 class="text-subtitle text-green">Proyectos</h3>
+            <h3 class="text-subtitle text-green" data-i18n="projects">Proyectos</h3>
 
             <ul class="projects-list">
                 <li>
@@ -200,21 +200,20 @@
 
                         <figure 
                             class="projects-article-image" 
-                            data-images="images/project-mars/mars-rover-front.webp,images/project-mars/mars-rover-diagram.png,images/project-mars/mars-rover-swagger.png,">
+                            data-images="images/project-mars/mars-rover-front.webp,images/project-mars/mars-rover-diagram.png,images/project-mars/mars-rover-swagger.png">
 
                             <img src="images/project-mars/mars-rover-front.webp" alt="Captura del proyecto API" />
                         </figure>
 
-                        <p class="projects-article-description text-dark">
+                        <p class="projects-article-description text-dark" data-i18n="projectMarsDescription">
                             API REST en Java con Spring Boot que simula el control de un rover en Marte mediante una secuencia de comandos. Implementa un diseño orientado a dominio aplicando principios SOLID y el patrón Command, permite la gestión de obstáculos y expone sus endpoints mediante documentación Swagger/OpenAPI.
                         </p>
 
-                        <ul class="projects-article-skills" aria-label="Tecnologías utilizadas">
+                        <ul class="projects-article-skills" aria-label="Tecnologías utilizadas" data-i18n-aria="technologies">
                             <li>
                                 <img
                                     src="assets/icons/java.svg"
-                                    alt="Java"
-                                    aria-hidden="true"
+                                    alt="Java 21"
                                 />
                                 <span>Java 21</span>
                             </li>
@@ -222,7 +221,6 @@
                                 <img
                                     src="assets/icons/spring.svg"
                                     alt="Spring Boot"
-                                    aria-hidden="true"
                                 />
                                 <span>Spring Boot</span>
                             </li>
@@ -230,7 +228,6 @@
                                 <img
                                     src="assets/icons/mysql.svg"
                                     alt="MySQL"
-                                    aria-hidden="true"
                                 />
                                 <span>MySQL</span>
                             </li>
@@ -238,7 +235,6 @@
                                 <img
                                     src="assets/icons/html.svg"
                                     alt="HTML"
-                                    aria-hidden="true"
                                 />
                                 <span>HTML</span>
                             </li>
@@ -246,15 +242,13 @@
                                 <img
                                     src="assets/icons/css.svg"
                                     alt="CSS"
-                                    aria-hidden="true"
                                 />
                                 <span>CSS</span>
                             </li>
                             <li>
                                 <img
                                     src="assets/icons/javascript.svg"
-                                    alt="JS"
-                                    aria-hidden="true"
+                                    alt="JavaScript"
                                 />
                                 <span>JS</span>
                             </li>
@@ -262,7 +256,6 @@
                                 <img
                                     src="assets/icons/junit.svg"
                                     alt="JUnit"
-                                    aria-hidden="true"
                                 />
                                 <span>JUnit</span>
                             </li>
@@ -270,23 +263,22 @@
                                 <img
                                     src="assets/icons/swagger.svg"
                                     alt="Swagger"
-                                    aria-hidden="true"
                                 />
                                 <span>Swagger</span>
                             </li>
                         </ul>
 
                         <footer class="projects-article-footer">
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 Demo
                             </a>
                             <a href="https://github.com/RubiojDev/mars-rover-api" target="_blank" rel="noopener noreferrer">
                                 GitHub
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer" data-i18n="documentation">
                                 Documentación
                             </a>
-                            <button class="project-history-btn" data-project="project-mars">
+                            <button type="button" class="project-history-btn" data-project="project-mars" data-i18n="history">
                                 Historial
                             </button>
                         </footer>
@@ -324,13 +316,13 @@
                         </ul>
 
                         <footer class="projects-article-footer">
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 Demo
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 GitHub
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 Documentación
                             </a>
                             <button class="project-history-btn" data-project="project-2">
@@ -371,13 +363,13 @@
                         </ul>
 
                         <footer class="projects-article-footer">
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 Demo
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 GitHub
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 Documentación
                             </a>
                             <button class="project-history-btn" data-project="project-3">
@@ -392,37 +384,37 @@
         <div class="section-divider"></div>
 
         <section id="contact" class="container">
-            <h3 class="text-subtitle text-green">Contacto</h3>
+            <h3 class="text-subtitle text-green" data-i18n="contact">Contacto</h3>
 
             <div class="contact-container">
                 <div class="contact-info">
-                    <p>
+                    <p data-i18n-html="contactDescription">
                         ¿Tienes un proyecto, idea o simplemente quieres
-                        conectar?
+                        conectar?<br />
                         <strong>Hablemos.</strong>
                     </p>
 
                     <ul class="contact-links">
                         <li>
-                            <a href="..." target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <a href="https://github.com/rubiojdev" target="_blank" rel="noopener noreferrer" title="GitHub">
                                 <img src="assets/icons/github.svg" alt="GitHub"/>
                             </a>
                         </li>
                         <li>
-                            <a href="..." target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/rubiojdev/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                                 <img src="assets/icons/linkedin.svg" alt="LinkedIn"/>
                             </a>
                         </li>
                         <li class="contact-item">
-                            <a href="#" id="copy-email" title="Copiar correo">
+                            <a href="#" id="copy-email" title="Copiar correo" data-i18n-title="titleCopy">
                                 <img src="assets/icons/email.svg" alt="Email" />
                             </a>
-                            <span class="copy-feedback" id="copy-feedback">
+                            <span class="copy-feedback" id="copy-feedback" data-i18n="copyMsg">
                                 Correo copiado
                             </span>
                         </li>
                         <li>
-                            <a href="./assets/docs/CV_Jesus_Rubio_Backend.pdf" download title="Descargar CV">
+                            <a href="./assets/docs/CV_Jesus_Rubio_Backend.pdf" download title="Descargar CV" data-i18n-title="titleDownloadCV">
                                 <img src="assets/icons/descargarpdf.png" alt="Descargar CV"/>
                             </a>
                         </li>
@@ -430,30 +422,36 @@
                 </div>
 
                 <form id="contact-form">
-                    <label for="name">Nombre</label>
+                    <label for="name" data-i18n="name">Nombre</label>
                     <input
                         id="name"
+                        name="name"
                         type="text"
                         placeholder="Nombre"
+                        data-i18n-holder="holderName"
                         required
                     />
 
-                    <label for="email">Correo</label>
+                    <label for="email" data-i18n="email">Correo</label>
                     <input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="Correo"
+                        data-i18n-holder="holderEmail"
                         required
                     />
 
-                    <label for="message">Mensaje</label>
+                    <label for="message" data-i18n="message">Mensaje</label>
                     <textarea
                         id="message"
+                        name="message"
                         placeholder="Mensaje"
+                        data-i18n-holder="holderMessage"
                         required
                     ></textarea>
 
-                    <button type="submit">Enviar</button>
+                    <button type="submit" data-i18n="send">Enviar</button>
                     <p id="form-status" aria-live="polite"></p>
                 </form>
             </div>
@@ -471,11 +469,11 @@
             <div class="modal-overlay"></div>
 
             <div class="modal-content modal-gallery">
-                <button class="modal-close" aria-label="Cerrar">✕</button>
+                <button class="modal-close" aria-label="Cerrar" data-i18n-aria="close">✕</button>
 
-                <button class="gallery-btn prev" aria-label="Anterior">‹</button>
+                <button class="gallery-btn prev" aria-label="Anterior" data-i18n-aria="previous">‹</button>
                 <img src="" alt="Imagen del proyecto" />
-                <button class="gallery-btn next" aria-label="Siguiente">›</button>
+                <button class="gallery-btn next" aria-label="Siguiente" data-i18n-aria="next">›</button>
             </div>
         </div>
 
@@ -483,9 +481,9 @@
             <div class="modal-overlay"></div>
 
             <div class="modal-content modal-history">
-                <button class="modal-close" aria-label="Cerrar">✕</button>
+                <button class="modal-close" aria-label="Cerrar" data-i18n-aria="close">✕</button>
 
-                <h3 class="modal-history-title">Historial del proyecto</h3>
+                <h3 class="modal-history-title" data-i18n="historyTitle">Historial del proyecto</h3>
 
                 <div class="modal-body">
                     <ul class="history-timeline"></ul>
