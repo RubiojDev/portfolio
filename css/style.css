@@ -247,7 +247,16 @@ button:focus-visible {
     justify-content: center;
     width: 95px;
     height: 95px;
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(
+        30% 0%,
+        70% 0%,
+        100% 30%,
+        100% 70%,
+        70% 100%,
+        30% 100%,
+        0% 70%,
+        0% 30%
+    );
     transition: transform 0.25s ease;
     position: relative;
     will-change: transform;
@@ -263,7 +272,16 @@ button:focus-visible {
     height: 90px;
     background: linear-gradient(160deg, #020617, var(--dark));
 
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(
+        30% 0%,
+        70% 0%,
+        100% 30%,
+        100% 70%,
+        70% 100%,
+        30% 100%,
+        0% 70%,
+        0% 30%
+    );
     border: none;
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.06), 0 8px 0 #020617,
         0 14px 20px rgba(0, 0, 0, 0.6);
@@ -376,7 +394,7 @@ button:focus-visible {
 
 .projects-article-image {
     border-radius: 8px;
-    height: 160px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -507,6 +525,29 @@ button:focus-visible {
     color: var(--white);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.modal-gallery {
+    position: relative;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(4, 24, 31, 0.8);
+    color: var(--green);
+    font-size: 2rem;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+}
+
+.gallery-btn.prev {
+    left: -40px;
+}
+
+.gallery-btn.next {
+    right: -40px;
 }
 
 /*-----------MODAL HISTORY-----------*/
@@ -878,10 +919,6 @@ button:focus-visible {
         padding: 1.25rem;
     }
 
-    .projects-article-image {
-        height: 140px;
-    }
-
     .projects-article-footer a {
         flex: 1;
         text-align: center;
@@ -891,6 +928,25 @@ button:focus-visible {
 
     .modal-content {
         max-width: 90vw;
+    }
+
+    .modal-gallery {
+        padding-bottom: 1rem;
+    }
+
+    .gallery-btn {
+        top: auto;
+        bottom: -48px;
+        transform: none;
+        font-size: 1.8rem;
+    }
+
+    .gallery-btn.prev {
+        left: 30%;
+    }
+
+    .gallery-btn.next {
+        right: 30%;
     }
 
     /*-----------CONTACT-----------*/

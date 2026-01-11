@@ -45,11 +45,11 @@
 
                     <button class="nav-language text-dark" aria-label="Idioma">
                         <span class="icon-language-es">
-                            <img src="images/es.webp" alt="icono español"/>
+                            <img src="assets/icons/es.webp" alt="icono español"/>
                             ES
                         </span>
                         <span class="icon-language-en hidden">
-                            <img src="images/en.webp" alt="icono ingles"/>
+                            <img src="assets/icons/en.webp" alt="icono ingles"/>
                             EN
                         </span>
                     </button>
@@ -171,6 +171,12 @@
                         </li>
                         <li class="skill-wrapper common">
                             <div class="skill-item">
+                                <img src="assets/icons/javascript.svg" alt="Skill JavaScript"/>
+                                <span>JavaScript</span>
+                            </div>
+                        </li>
+                        <li class="skill-wrapper common">
+                            <div class="skill-item">
                                 <img src="assets/icons/bootstrap.svg" alt="Skill Bootstrap"/>
                                 <span>Bootstrap</span>
                             </div>
@@ -190,18 +196,17 @@
             <ul class="projects-list">
                 <li>
                     <article class="projects-article">
-                        <h4 class="projects-article-title">Título</h4>
+                        <h4 class="projects-article-title">Mars Rover API</h4>
 
-                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
-                            <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
+                        <figure 
+                            class="projects-article-image" 
+                            data-images="images/project-mars/mars-rover-front.webp,images/project-mars/mars-rover-diagram.png,images/project-mars/mars-rover-swagger.png,">
+
+                            <img src="images/project-mars/mars-rover-front.webp" alt="Captura del proyecto API" />
                         </figure>
 
                         <p class="projects-article-description text-dark">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Saepe, tempora! Recusandae quas, debitis ut
-                            provident dolores esse, rerum consectetur possimus
-                            quidem exercitationem, autem molestiae ab
-                            reprehenderit? Ipsum magnam maxime consequuntur.
+                            API REST en Java con Spring Boot que simula el control de un rover en Marte mediante una secuencia de comandos. Implementa un diseño orientado a dominio aplicando principios SOLID y el patrón Command, permite la gestión de obstáculos y expone sus endpoints mediante documentación Swagger/OpenAPI.
                         </p>
 
                         <ul class="projects-article-skills" aria-label="Tecnologías utilizadas">
@@ -211,11 +216,63 @@
                                     alt="Java"
                                     aria-hidden="true"
                                 />
-                                <span>Skill1</span>
+                                <span>Java 21</span>
                             </li>
                             <li>
-                                <img src="" alt="" aria-hidden="true" />
-                                <span>Skill1</span>
+                                <img
+                                    src="assets/icons/spring.svg"
+                                    alt="Spring Boot"
+                                    aria-hidden="true"
+                                />
+                                <span>Spring Boot</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/mysql.svg"
+                                    alt="MySQL"
+                                    aria-hidden="true"
+                                />
+                                <span>MySQL</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/html.svg"
+                                    alt="HTML"
+                                    aria-hidden="true"
+                                />
+                                <span>HTML</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/css.svg"
+                                    alt="CSS"
+                                    aria-hidden="true"
+                                />
+                                <span>CSS</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/javascript.svg"
+                                    alt="JS"
+                                    aria-hidden="true"
+                                />
+                                <span>JS</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/junit.svg"
+                                    alt="JUnit"
+                                    aria-hidden="true"
+                                />
+                                <span>JUnit</span>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/icons/swagger.svg"
+                                    alt="Swagger"
+                                    aria-hidden="true"
+                                />
+                                <span>Swagger</span>
                             </li>
                         </ul>
 
@@ -223,13 +280,13 @@
                             <a href="..." target="_blank" rel="noopener noreferrer">
                                 Demo
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/RubiojDev/mars-rover-api" target="_blank" rel="noopener noreferrer">
                                 GitHub
                             </a>
                             <a href="..." target="_blank" rel="noopener noreferrer">
                                 Documentación
                             </a>
-                            <button class="project-history-btn" data-project="project-ifix">
+                            <button class="project-history-btn" data-project="project-mars">
                                 Historial
                             </button>
                         </footer>
@@ -239,7 +296,7 @@
                     <article class="projects-article">
                         <h4 class="projects-article-title">Título</h4>
 
-                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
+                        <figure class="projects-article-image" data-images="images/trabajando.jpg">
                             <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
                         </figure>
 
@@ -286,7 +343,7 @@
                     <article class="projects-article">
                         <h4 class="projects-article-title">Título</h4>
 
-                        <figure class="projects-article-image" data-modal-image="images/trabajando.jpg">
+                        <figure class="projects-article-image" data-images="images/trabajando.jpg">
                             <img src="images/trabajando.jpg" alt="Captura del proyecto API"/>
                         </figure>
 
@@ -413,9 +470,12 @@
         <div id="image-modal" class="modal">
             <div class="modal-overlay"></div>
 
-            <div class="modal-content">
+            <div class="modal-content modal-gallery">
                 <button class="modal-close" aria-label="Cerrar">✕</button>
-                <img src="" alt="Imagen ampliada del proyecto" />
+
+                <button class="gallery-btn prev" aria-label="Anterior">‹</button>
+                <img src="" alt="Imagen del proyecto" />
+                <button class="gallery-btn next" aria-label="Siguiente">›</button>
             </div>
         </div>
 
