@@ -1,19 +1,19 @@
 [
   {
-    "module": "Estado del despliegue",
+    "module": "Deployment status",
     "status": "progress",
     "date": "2026-01-05",
     "changes": [
-      "Servicio temporalmente fuera de línea debido a cambios en el servidor de despliegue"
+      "Service temporarily offline due to changes in the deployment server"
     ]
   },
   {
-    "module": "Versión final",
+    "module": "Final release",
     "status": "done",
     "date": "2025-11-29",
     "changes": [
-      "Despliegue en Railway",
-      "Documentación de la API con Swagger/OpenAPI"
+      "Deployment on Railway",
+      "API documentation with Swagger/OpenAPI"
     ]
   }
 ]
