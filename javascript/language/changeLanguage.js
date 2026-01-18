@@ -99,13 +99,15 @@ function translateMeta(element, lang) {
 }
 
 function updateCvLink(lang) {
-    const cvLink = document.querySelector("[data-cv-link]");
-    if (!cvLink) return;
+    const cvLinks = document.querySelectorAll("[data-cv-link]");
+    if (!cvLinks.length) return;
 
     const cvMap = {
         es: "./assets/docs/CV_Jesus_Rubio_Backend_ES.pdf",
         en: "./assets/docs/CV_Jesus_Rubio_Backend_EN.pdf",
     };
 
-    cvLink.setAttribute("href", cvMap[lang] || cvMap.es);
+    cvLinks.forEach((link) => {
+        link.setAttribute("href", cvMap[lang] || cvMap.es);
+    });
 }

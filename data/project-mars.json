@@ -1,7 +1,15 @@
 [
   {
+    "module": "Documentation",
+    "status": "done",
+    "date": "2026-01-18",
+    "changes": [
+      "Complete documentation on GitBook that describes and explains different aspects of the API in more detail"
+    ]
+  },
+  {
     "module": "Deployment status",
-    "status": "progress",
+    "status": "in_progress",
     "date": "2026-01-05",
     "changes": [
       "Service temporarily offline due to changes in the deployment server"
