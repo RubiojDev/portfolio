@@ -1,3 +1,5 @@
+import { translate } from "../language/changeLanguage.js";
+
 export function contactForm() {
     const form = document.getElementById("contact-form");
     const statusMsg = document.getElementById("form-status");
@@ -15,21 +17,21 @@ export function contactForm() {
         const message = form.message.value.trim();
 
         if (name.length < 2) {
-            showError("El nombre debe tener al menos 2 caracteres");
+            showError(translate("nameError"));
             return;
         }
 
         if (!isValidEmail(email)) {
-            showError("El correo no es válido");
+            showError(translate("emailError"));
             return;
         }
 
         if (message.length < 10) {
-            showError("El mensaje debe tener al menos 10 caracteres");
+            showError(translate("messageError"));
             return;
         }
 
-        statusMsg.textContent = "Enviando...";
+        statusMsg.textContent = translate("sending");
 
         emailjs
             .send("service_f4y779d", "template_bpalade", {
@@ -38,12 +40,12 @@ export function contactForm() {
                 message,
             })
             .then(() => {
-                statusMsg.textContent = "Mensaje enviado correctamente ✔";
+                statusMsg.textContent = translate("formSuccess");
                 statusMsg.classList.add("form-success");
                 form.reset();
             })
             .catch(() => {
-                showError("Error al enviar el mensaje. Intenta más tarde.");
+                showError(translate("formError"));
             });
     });
     

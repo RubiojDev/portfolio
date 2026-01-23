@@ -1,3 +1,5 @@
+import { translate } from "../language/changeLanguage.js";
+
 export function historyModal() {
     const historyModal = document.getElementById("history-modal");
     const historyList = historyModal.querySelector(".history-timeline");
@@ -11,7 +13,7 @@ export function historyModal() {
                 const data = await res.json();
                 renderHistory(data);
             } catch (err) {
-                historyList.innerHTML = "<li>Error cargando historial.</li>";
+                historyList.innerHTML = `<li>${translate("historyLoadError")}</li>`;
             }
 
             historyModal.classList.add("active");
@@ -35,7 +37,7 @@ export function historyModal() {
         historyList.innerHTML = "";
 
         if (!entries || entries.length === 0) {
-            historyList.innerHTML = "<li>No hay historial disponible.</li>";
+            historyList.innerHTML = `<li>${translate("historyEmpty")}</li>`;
             return;
         }
 

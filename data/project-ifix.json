@@ -1,37 +1,37 @@
 [
   {
-    "module": "Productos y Marcas",
+    "module": "Products and Brands",
     "status": "progress",
     "date": "2025-12-29",
     "changes": [
-      "Desarrollo del módulo de Productos y Marcas"
+      "Development of the Products and Brands module"
     ]
   },
   {
-    "module": "Proveedores y Compras",
+    "module": "Suppliers and Purchases",
     "status": "done",
     "date": "2025-12-28",
     "changes": [
-      "Desarrollo del módulo de proveedores",
-      "manejo de detalles de compra",
-      "actualización de stock"
+      "Development of the suppliers module",
+      "Purchase details management",
+      "Stock updates"
     ]
   },
    {
-    "module": "Inicio del Proyecto en Spring",
+    "module": "Spring Project Initialization",
     "status": "done",
     "date": "2025-12-10",
     "changes": [
-      "Creación del proyecto base en Spring Boot",
-      "configuración inicial y estructura del backend."
+      "Creation of the base Spring Boot project",
+      "Initial configuration and backend structure"
     ]
   },
   {
-    "module": "Diagrama Entidad Relacion",
+    "module": "Entity-Relationship Diagram",
     "status": "done",
     "date": "2025-12-08",
     "changes": [
-      "Diseño del diagrama entidad–relación"
+      "Design of the entity–relationship diagram"
     ]
   }
 ]
