@@ -1,24 +1,35 @@
 export function pictureModal() {
     const modal = document.getElementById("image-modal");
     const modalImg = modal.querySelector("img");
-    const modalClose = modal.querySelector(".modal-close");
-    const modalOverlay = modal.querySelector(".modal-overlay");
+    const closeBtn = modal.querySelector(".modal-close");
+    const prevBtn = modal.querySelector(".prev");
+    const nextBtn = modal.querySelector(".next");
+
+    let images = [];
+    let currentIndex = 0;
 
     document.querySelectorAll(".projects-article-image").forEach((figure) => {
         figure.addEventListener("click", () => {
-            const imgSrc = figure.dataset.modalImage;
-            modalImg.src = imgSrc;
+            images = figure.dataset.images.split(",").map((src) => src.trim());
+            currentIndex = 0;
+            modalImg.src = images[currentIndex];
             modal.classList.add("active");
-            document.body.style.overflow = "hidden";
         });
     });
 
-    modalClose.addEventListener("click", closeModal);
-    modalOverlay.addEventListener("click", closeModal);
+    prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        modalImg.src = images[currentIndex];
+    });
 
-    function closeModal() {
+    nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        modalImg.src = images[currentIndex];
+    });
+
+    closeBtn.addEventListener("click", () => {
         modal.classList.remove("active");
-        modalImg.src = "";
-        document.body.style.overflow = "";
-    }
+    });
 }
